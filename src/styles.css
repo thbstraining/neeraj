@@ -1,0 +1,296 @@
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #070720;
+  color: #f0f0f0;    
+  background-image: url('https://wallpaperaccess.com/full/2854615.jpg'); /* Cosmic background image */
+  background-size: cover; /* Cover the entire background */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed; /* Make the background image fixed on scroll */
+  background-position: center; /* Center the background image */
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Component-specific styles */
+
+/* HomePage */
+/* Homepage container styles */
+.homepage-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 15px;
+  background-color: rgb(0 0 0 / 70%);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  color: #f8f8f8;
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+
+  /* Animation */
+  animation: slide-in 1s ease-out forwards;
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* CatalogPage */
+.catalog-container {
+  max-width: 1000px; /* Reduced max-width */
+  margin: 10px auto; /* Reduced margin */
+  padding: 15px; /* Reduced padding */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgb(255, 255, 255); /* White shadow */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  color: #bf3599;
+  gap: 15px; /* Reduced gap */
+}
+
+.catalog-item {
+  position: relative; /* Ensure the content stays within the box */
+  margin-bottom: 15px; /* Reduced margin */
+  padding: 15px; /* Reduced padding */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  flex: 1 1 calc(33.333% - 30px); /* Adjust size for a three-column layout */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+  color: white;  /* Text color for better readability */
+}
+
+.catalog-item .edit-button {
+  
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #bf3599;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.catalog-item .edit-button:hover {
+  background-color: #bf3599; /* Darker shade on hover */
+}
+
+.catalog-item:hover {
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.catalog-item .catalog-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for details */
+  color: white;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+.catalog-item:hover .catalog-details {
+  opacity: 1; /* Show details on hover */
+}
+
+.catalog-item h3 {
+  color:#bf3599;
+  margin-top: 0;
+}
+
+.catalog-item p {
+  color: #c1b7ca; /* Light gray text color */
+  margin-bottom: 10px;
+}
+
+/* VoyageDetailsPage */
+
+
+.voyage-details-container {
+  width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(0 0 0 / 70%);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    display: grid;
+    align-items: center
+}
+
+.voyage-details-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* White shadow */
+  background-size: cover; /* Cover the image */
+  background-position: center; /* Center the image */
+  filter: brightness(80%); 
+  position:relative;
+  left:30%;
+}
+
+
+.voyage-details-container p {
+  color: #ccc; /* Light gray text color */
+}
+
+/* NotFoundPage */
+.not-found-container {
+  max-width: 600px; /* Reduced max-width */
+  margin: 10px auto; /* Reduced margin */
+  padding: 15px; /* Reduced padding */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White shadow */
+}
+
+/* styles.css */
+.voyage-link {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Set text color */
+}
+
+.voyage-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+  color: lightblue; /* Example: Change text color on hover */
+}
+
+/* Styling for the favorite button */
+.favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ccc; /* Default color for unfavorite state */
+  transition: color 0.3s ease;
+}
+
+.favorite-button:hover {
+  color: #bf3599; /* Color change on hover */
+}
+
+/* Styling for when voyage is marked as favorite */
+.catalog-item.favorite {
+  background-color: rgba(255, 16, 190, 0.1); /* Light pink background */
+}
+
+.catalog-item.favorite .favorite-button {
+  color:#bf3599; /* Pink color for favorite state */
+}
+
+/* Search container styling */
+.search-container {
+  width: 100%;
+  max-width: 800px; /* Adjusted max-width */
+  margin: 10px auto; /* Reduced margin */
+
+}
+
+.search-input {
+  color: #fcfcfc;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 4px solid #bf3599;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.808)
+}
+
+.search-input:focus {
+  
+  border: 4px solid #bf3599;
+  border-radius: 4px;
+ 
+  
+}
+
+.search-button-container {
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  margin-left: 300px;
+  
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color:#bf3599;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #bf3599; /* Darker shade on hover */
+}
+
+
+.add-voyage-container,
+.edit-voyage-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgb(255 255 255 / 73%);
+  
+}
+
+.add-voyage-container input,
+.edit-voyage-container input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  
+  border: 4px solid #bf3599; /* Adjusted for a thick purple border */
+  border-radius: 4px;
+  outline: none;
+  background-color:rgb(255 255 255 / 73%); /* Transparent background */
+}
+
+.add-button,
+.update-button {
+  background-color:#bf3599;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-button:hover,
+.update-button:hover {
+  background-color: #2eb82e;
+}
